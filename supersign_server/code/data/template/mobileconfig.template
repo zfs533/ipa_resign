@@ -1,0 +1,38 @@
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadContent</key>
+    <dict>
+      <key>URL</key>
+      <string>{URL}</string>
+      <key>DeviceAttributes</key>
+      <array>
+        <string>UDID</string>
+        <string>DEVICE_NAME</string>
+        <string>IMEI</string>
+        <string>MODEL</string>
+        <string>VERSION</string>
+        <string>SERIAL</string>
+        <string>PRODUCT</string>
+      </array>
+      <key>Challenge</key>
+      <string>BB93BCA2-08AF-8001-C5FA-30678D09AB88_1570191813_622eae5213e2aec14c582a531f9f98d3</string>
+    </dict>
+    <key>PayloadDescription</key>
+    <string>Authorized installation APP</string>
+    <key>PayloadDisplayName</key>
+    <string>{NAME}--[点击安装]</string>
+    <key>PayloadIdentifier</key>
+    <string>com.Apple.US.Jobs.steup</string>
+    <key>PayloadOrganization</key>
+    <string>Authorized installation APP to enter the next step</string>
+    <key>PayloadType</key>
+    <string>Profile Service</string>
+    <key>PayloadUUID</key>
+    <string>BB93BCA2-08AF-8001-C5FA-30678D09AB88</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDescription</key>
+    <string>极速下载、安全安装，无需Apple ID即可轻松畅玩苹果(已通过苹果安全认证)</string>
+  </dict>
+</plist>

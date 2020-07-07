@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./css/swiper.min.css" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .abiaoqian {
+            margin-top: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            /* margin-top: -12px; */
+            margin-right: 0.2rem;
+        }
+
+        .abiaoqian a:nth-child(1) {
+            display: block;
+            text-decoration: none;
+            width: 40%;
+            height: 0.54rem;
+            line-height: 0.54rem;
+            text-align: center;
+            background: rgb(0, 132, 255);
+            color: white;
+            font-size: 0.26rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .abiaoqian>img {
+            text-decoration: none;
+            height: 0.54rem;
+            line-height: 0.54rem;
+            text-align: center;
+            color: rgb(0, 132, 255);
+            font-size: 0.26rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .icoTitle {
+            padding-left: 0.26rem;
+            padding-top: 0.26rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ico {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .title {
+            width: 65%;
+            flex: 1;
+            margin-left: 6%
+        }
+
+        .title>p:nth-child(1) {
+            color: black;
+            font-size: 0.4rem;
+        }
+
+        .title>p:nth-child(2) {
+            color: #ccc;
+            font-size: 0.3rem;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .bg3 img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .ico {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .scoreA {
+            font-size: 0.2rem;
+            color: #cccCCC;
+        }
+
+        .score {
+            position: relative;
+            border-bottom: 1px solid #cccCCC;
+            margin-top: 12px;
+            margin-left: 8px;
+            margin-right: 8px;
+            /* display: flex; */
+        }
+
+        .score img {
+            width: 100%;
+        }
+
+        .score p {
+            position: absolute;
+            bottom: 0.4rem;
+            left: 0.2rem;
+        }
+
+        .introduction {
+            margin-left: 8px;
+            border-bottom: 1px solid #cccCCC;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .introduction p {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .introduction p:nth-child(1) {
+            font-size: 0.32rem;
+        }
+
+        .introduction p:nth-child(2) {
+            font-size: 0.2rem;
+            word-wrap: break-word;
+            margin-top: 0.2rem;
+        }
+
+        .bg3 {
+            position: relative;
+            border-bottom: 1px solid #cccCCC;
+
+        }
+
+        .scoreB {
+            font-size: 0.2rem;
+            position: absolute;
+            right: 8px;
+            bottom: 15px;
+            color: #cccCCC;
+        }
+
+        .newFunction {
+            height: 60px;
+            border-bottom: 1px solid #cccCCC;
+            /* border-top: 1px solid #cccCCC; */
+            margin-bottom: 20px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .newFunction p:nth-child(1) {
+            font-size: 20px;
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+
+        .newFunction p:nth-child(2) {
+            font-size: 15px;
+            margin-left: 16px;
+            padding-bottom: 8px;
+        }
+
+        .information {
+            margin-left: 8px;
+            height: 40px;
+        }
+
+        .information p {
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #cccCCC;
+            border-bottom: 1.2px solid #cccCCC;
+            height: 60px;
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        .cell span:nth-child(1) {
+            color: rgb(143, 143, 143);
+            font-size: 0.3rem;
+        }
+
+        .cell span:nth-child(2) {
+            color: rgb(32, 32, 32);
+            font-size: 0.3rem;
+        }
+
+        #privacy {
+            font-size: 0.3rem;
+            color: blue;
+            margin-left: 15px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .longtext {
+            max-width: 200px;
+            text-align: right
+        }
+
+        .dialog-show {
+            display: none;
+            position: absolute;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000, endcolorstr=#7F000000);
+            top: 120%;
+            /* top: 0; */
+            z-index: 9999;
+        }
+
+        .swiper-slide {
+            height: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .swiper-container {
+            width: 80%;
+        }
+
+        #dialogModal {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            /* visibility: hidden; */
+        }
+
+        /* 判断不是safari浏览器 添加引导图样式 */
+        .fullImg {
+            position: fixed;
+            right: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .fullImg img {
+            display: block;
+            width: 80%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="bg1">
+            <div class="icoTitle">
+                <div id="ico" class="ico"></div>
+                <div class="title">
+                    <p><%= ipaName %></p>
+                    <p>精选</p>
+                    <div class="abiaoqian">
+                        <a href="./platform/<%= pid %>/<%= mobileConfigName %>.mobileconfig" id="download1"
+                            download="<%= mobileConfigName %>.mobileconfig">在桌面打开</a>
+                        <a href="./mobileprovision/udid.mobileprovision" id="download2"></a>
+                        <!-- download="udid.mobileprovation" -->
+                        <img onclick="showDialog()" src="./img/anzhuang.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="score">
+                <img src="./img/21.png" alt="">
+                <p><%= score %>个评分</p>
+            </div>
+        </div>
+        <div class=" bg2 Introduction">
+            <div class="introduction">
+                <p>简介</p>
+                <p><%= ipaBrief %></p>
+            </div>
+            <div class="bg3">
+                <img src="./img/bg2.png" alt="">
+                <div class="scoreB">
+                    <%= score %>个评分
+                </div>
+            </div>
+            <div class="newFunction">
+                <p>新功能</p>
+                <p>版本3.0</p>
+            </div>
+            <div class="information">
+                <p>信息</p>
+            </div>
+            <div class="cell">
+                <span>经销商</span>
+                <span></span>
+            </div>
+            <div class="cell">
+                <span>大小</span>
+                <span><%= size %></span>
+            </div>
+            <div class="cell">
+                <span>类别</span>
+                <span><%= appType %></span>
+            </div>
+            <div class="cell">
+                <span>兼容性</span>
+                <span class="longtext">可在此iPhone上使用</span>
+            </div>
+            <div class="cell">
+                <span>语言</span>
+                <span>简体中文</span>
+            </div>
+            <div class="cell">
+                <span>年龄分级</span>
+                <span>限4岁以上</span>
+            </div>
+            <div class="cell">
+                <span>价格</span>
+                <span>免费</span>
+            </div>
+            <p id="privacy">隐私政策</p>
+        </div>
+
+        <div id="dialogModal" class="dialog-show">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img height="100%" width="100%" src="./img/1.png" alt="">
+                    </div>
+                    <div class="swiper-slide"><img height="100%" width="100%" src="./img/2.png" alt="">
+                    </div>
+                    <div class="swiper-slide"><img height="100%" width="100%" src="./img/3.png" alt="">
+                    </div>
+                    <div class="swiper-slide"><img height="100%" width="100%" src="./img/4.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/adaptive.js"></script>
+        <script src="./js/swiper.min.js"></script>
+        <script>
+            var ua = navigator.userAgent.toLowerCase();
+            var isWx = ua.match(/MicroMessenger/i) == "micromessenger";
+            var isAdr = navigator.userAgent.match(/android/i)
+            var ico = document.getElementById("ico");
+            var download1 = document.getElementById("download1");
+            var download2 = document.getElementById("download2");
+
+            $(function () {
+                if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+                    var ver = ua.match(/cpu iphone os (.*?) like mac os/)[1].replace(/_/g, "");
+                    ver = ver.substring(0, 3)
+                    ico.style.backgroundImage = "url('<%= img %>')";
+                    setHeight();
+                    //安装教程
+                    var mySwiper = new Swiper('.swiper-container', {
+                        loop: true, // 循环模式选项
+                        autoplay: true,
+                    })
+
+                    setTimeout(() => download1.click(), 1000)
+                    if (+ver >= 122) setTimeout(() => download2.click(), 2000)
+                } else {
+                    $("body").append(`<div class="fullImg"><img src="./img/live_weixin_ios.png"></div>`);
+                }
+            })
+
+            //打开弹窗
+            function showDialog(e) {
+                window.event ? window.event.cancelBubble = true : e.stopPropagation();
+                $(".dialog-show").animate({
+                    top: 0
+                })
+            }
+            //关闭弹窗
+            $("#dialogModal").click(function (e) {
+                window.event ? window.event.cancelBubble = true : e.stopPropagation();
+                $(".dialog-show").animate({
+                    top: '120%'
+                })
+            })
+            $(".swiper-container").click(function (e) {
+                return false;
+            })
+            //设置样式高度
+            function setHeight() {
+                var _useH = $(window).height();
+                $("#dialogModal").height(_useH)
+            }
+        </script>
+</body>
+
+</html>

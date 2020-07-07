@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./css/swiper.min.css" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .abiaoqian {
+            margin-top: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            /* margin-top: -12px; */
+            margin-right: 0.2rem;
+        }
+
+        .abiaoqian>a {
+            width: 40% !important;
+            font-size: 16px;
+        }
+
+        .abiaoqian a {
+            display: block;
+            text-decoration: none;
+            width: 90%;
+            height: 0.54rem;
+            line-height: 0.54rem;
+            text-align: center;
+            background: rgb(0, 132, 255);
+            color: white;
+            font-size: 0.26rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .abiaoqian>img {
+            text-decoration: none;
+            height: 0.54rem;
+            line-height: 0.54rem;
+            text-align: center;
+            color: rgb(0, 132, 255);
+            font-size: 0.26rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .icoTitle {
+            padding-left: 0.26rem;
+            padding-top: 0.26rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ico {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .title {
+            width: 65%;
+            flex: 1;
+            margin-left: 6%
+        }
+
+        .title>p:nth-child(1) {
+            color: black;
+            font-size: 0.4rem;
+        }
+
+        .title>p:nth-child(2) {
+            color: #ccc;
+            font-size: 0.3rem;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .bg3 img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .ico {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .scoreA {
+            font-size: 0.2rem;
+            color: #cccCCC;
+        }
+
+        .score {
+            position: relative;
+            border-bottom: 1px solid #cccCCC;
+            margin-top: 12px;
+            margin-left: 8px;
+            margin-right: 8px;
+            /* display: flex; */
+        }
+
+        .score img {
+            width: 100%;
+        }
+
+        .score p {
+            position: absolute;
+            bottom: 0.4rem;
+            left: 0.2rem;
+        }
+
+        .introduction {
+            margin-left: 8px;
+            border-bottom: 1px solid #cccCCC;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .introduction p {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .introduction p:nth-child(1) {
+            font-size: 0.32rem;
+        }
+
+        .introduction p:nth-child(2) {
+            font-size: 0.2rem;
+            word-wrap: break-word;
+            margin-top: 0.2rem;
+        }
+
+        .bg3 {
+            position: relative;
+            border-bottom: 1px solid #cccCCC;
+
+        }
+
+        .scoreB {
+            font-size: 0.2rem;
+            position: absolute;
+            right: 8px;
+            bottom: 15px;
+            color: #cccCCC;
+        }
+
+        .newFunction {
+            height: 60px;
+            border-bottom: 1px solid #cccCCC;
+            /* border-top: 1px solid #cccCCC; */
+            margin-bottom: 20px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .newFunction p:nth-child(1) {
+            font-size: 20px;
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+
+        .newFunction p:nth-child(2) {
+            font-size: 15px;
+            margin-left: 16px;
+            padding-bottom: 8px;
+        }
+
+        .information {
+            margin-left: 8px;
+            height: 40px;
+        }
+
+        .information p {
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #cccCCC;
+            border-bottom: 1.2px solid #cccCCC;
+            height: 60px;
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        .cell span:nth-child(1) {
+            color: rgb(143, 143, 143);
+            font-size: 0.3rem;
+        }
+
+        .cell span:nth-child(2) {
+            color: rgb(32, 32, 32);
+            font-size: 0.3rem;
+        }
+
+        #privacy {
+            font-size: 0.3rem;
+            color: blue;
+            margin-left: 15px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .longtext {
+            max-width: 200px;
+            text-align: right
+        }
+
+        #loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            top: 0;
+            color: rgb(228, 225, 225);
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 0.6rem;
+            text-shadow: 0.1rem 0.1rem 0.1rem #cccccc;
+            visibility: visible;
+        }
+
+        #btnDownload {
+            margin-top: 0.36rem;
+            display: block;
+            text-decoration: none;
+            width: 40%;
+            height: 0.54rem;
+            line-height: 0.54rem;
+            text-align: center;
+            background: rgb(0, 132, 255);
+            color: white;
+            font-size: 0.26rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg" id="contain">
+        <div class="bg1">
+            <div class="icoTitle">
+                <div id="ico" class="ico"></div>
+                <div class="title">
+                    <p><%= ipaName %></p>
+                    <p>精选</p>
+                    <a id="btnDownload" href="<%= ipaUrl %>" download="manifest.plist">正在下载</a>
+                    <div id='progressbar'></div>
+                </div>
+            </div>
+            <div class="score">
+                <img src="./img/21.png" alt="">
+                <p><%= score %>个评分</p>
+            </div>
+        </div>
+        <div class="bg2 Introduction">
+            <div class="introduction">
+                <p>简介</p>
+                <p><%= ipaBrief %></p>
+            </div>
+            <div class="bg3">
+                <img src="./img/bg2.png" alt="">
+                <div class="scoreB">
+                    <%= score %>个评分
+                </div>
+            </div>
+            <div class="newFunction">
+                <p>新功能</p>
+                <p>版本3.0</p>
+            </div>
+            <div class="information">
+                <p>信息</p>
+            </div>
+            <div class="cell">
+                <span>经销商</span>
+                <span></span>
+            </div>
+            <div class="cell">
+                <span>大小</span>
+                <span><%= size %></span>
+            </div>
+            <div class="cell">
+                <span>类别</span>
+                <span><%= appType %></span>
+            </div>
+            <div class="cell">
+                <span>兼容性</span>
+                <span class="longtext">可在此iPhone上使用</span>
+            </div>
+            <div class="cell">
+                <span>语言</span>
+                <span>简体中文</span>
+            </div>
+            <div class="cell">
+                <span>年龄分级</span>
+                <span>限4岁以上</span>
+            </div>
+            <div class="cell">
+                <span>价格</span>
+                <span>免费</span>
+            </div>
+            <p id="privacy">隐私政策</p>
+        </div>
+
+        <!-- 遮罩层 -->
+        <div id="loading">
+            <img src="./img/download.gif" style="display: block;width: 25%;" alt="">
+            <h5 style="text-align:center">下载中</h5>
+        </div>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/adaptive.js"></script>
+        <script>
+            var ico = document.getElementById("ico");
+            ico.style.backgroundImage = "url('<%= img %>')"
+            let clearInterval_one, clearRunEvery1Sec;
+            var hasI = '<%= hasIpa %>';
+            let s = 60;
+            let url = "<%= ipaUrl %>";
+
+            //  倒计时
+            function countTime() {
+                if (s <= 0) {
+                    s = 60;
+                    $("#btnDownload").text("请在桌面查看app");
+                    clearInterval(clearInterval_one);
+                    $("#btnDownload").attr('disabled', 'false');
+                } else {
+                    $("#btnDownload").text(s + "秒");
+                }
+
+                s--;
+            }
+
+            function bindTap() {
+                $("#loading").css({
+                    "visibility": "hidden"
+                });
+                $("#contain").css({
+                    "height": "auto",
+                    "overflow": "visible"
+                });
+                //触发自动下载
+                $("#btnDownload").on("tap", function () {
+                    $(this).attr('disabled', 'true');
+                    clearInterval_one = setInterval(function () {
+                        countTime();
+                    }, 1000);
+                    window.open(url);
+                })
+                setTimeout(function () {
+                    location.href = url;
+                    $("#btnDownload").trigger("tap");
+                }, 1000)
+            }
+            //  进入判断请求
+            function ifHasI() {
+
+                if (hasI == true) {
+                    bindTap();
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        data: { pid: '<%= pid %>', user: '<%= user %>', udid: '<%= udid %>' },
+                        async: true,
+                        url: '/sign/upDlNum',
+                        success: function (data) {
+
+                        }
+                    });
+
+                } else {
+                    clearRunEvery1Sec = setInterval(runEvery1Sec, 1000);
+                }
+            }
+            // 循环请求包体
+            function runEvery1Sec() {
+                // 1000 * 1 = 1秒钟
+                //每秒请求一次ajax
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    async: true,
+                    url: '/sign/isIpa?pid=<%= pid %>&act=<%= account %>&udid=<%= udid %>',
+                    success: function (data) {
+                        if (data.msg === true) {
+                            // 当为true时自动下载
+                            clearInterval(clearRunEvery1Sec);
+                            bindTap();
+                            $.ajax({
+                                type: "POST",
+                                dataType: "json",
+                                data: { pid: '<%= pid %>', user: '<%= user %>', udid: '<%= udid %>' },
+                                async: true,
+                                url: '/sign/upDlNum',
+                                success: function (data) {
+
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+            $(document).ready(function () {
+                ifHasI();
+            });
+        </script>
+</body>
+
+</html>

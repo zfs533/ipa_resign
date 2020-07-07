@@ -1,0 +1,1 @@
+isign -c ./data/isign/certificate.pem -k ./data/isign/key.pem -p ./data/ipa/embedded.mobileprovision -o ./data/isign/resigned.ipa ./data/ipa/apple.ipa

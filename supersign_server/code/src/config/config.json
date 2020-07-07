@@ -1,0 +1,10 @@
+{
+    "port": 8091,
+    "dbUrl": "mongodb://localhost/ipa",
+    "logLevel": "debug",
+    "mixStaticPath": false,
+    "googleAuthPrefix": "vipPack-",
+    "ipaDomains": [
+        "http://192.168.1.119:8091"
+    ]
+}
