@@ -46,7 +46,7 @@
     "mongoose": "^5.7.12",
     "multiparty": "^4.2.1",
     "node-forge": "^0.8.2",
-    "pm2": "^4.1.2",
+    "pm2": "^5.2.0",
     "qrcode-terminal": "^0.12.0",
     "request": "^2.88.0",
     "saslprep": "^1.0.3",
